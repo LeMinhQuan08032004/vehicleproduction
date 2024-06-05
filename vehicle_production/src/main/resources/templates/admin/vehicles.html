@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin - Vehicles</title>
+</head>
+<body>
+<h1>Vehicle List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Color</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="vehicle : ${vehicles}">
+        <td th:text="${vehicle.vehicleId}"></td>
+        <td th:text="${vehicle.vehicleName}"></td>
+        <td th:text="${vehicle.vehicleModel}"></td>
+        <td th:text="${vehicle.yearOfManufacture}"></td>
+        <td th:text="${vehicle.vehicleColor}"></td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{/admin/vehicle/add}">Add New Vehicle</a>
+</body>
+</html>
